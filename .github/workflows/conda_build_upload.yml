@@ -1,4 +1,4 @@
-name: conda_build_upload
+name: Conda build upload
 
 on:
   push:

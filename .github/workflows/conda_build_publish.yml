@@ -1,0 +1,52 @@
+name: conda_build_upload
+
+on:
+  push:
+    paths:
+      - 'recipes/**'
+  pull_request:
+    paths:
+      - 'recipes/**'
+
+jobs:
+  get_recipes:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - id: set-matrix
+      run: |
+        json=$(python -c 'import os; print("{{\"recipe\": {0}}}".format(os.listdir("./recipes")))')
+        echo $json
+        echo ::set-output name=matrix::$(echo $json)
+
+  build_upload_recipes:
+    needs: get_recipes
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJson(needs.get_recipes.outputs.matrix )}}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: marceloprado/has-changed-path@v1
+        id: changed-recipe
+        with:
+          paths: recipes/${{ matrix.recipe }}
+
+      - name: build-recipes
+        if: github.ref != 'refs/heads/main' && steps.changed-recipe.outputs.changed == 'true'
+        uses: ./
+        with:
+          subdir: recipes/${{ matrix.recipe }}
+
+      - name: build-upload-recipes
+        if: github.ref == 'refs/heads/main'
+        uses: ./
+        with:
+          subdir: recipes/${{ matrix.recipe }}
+          anacondatoken: ${{ secrets.ANACONDA_TOKEN }}

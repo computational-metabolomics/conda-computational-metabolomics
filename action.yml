@@ -1,0 +1,14 @@
+name: 'Build recipe and upload to Anaconda'
+description: 'Build recipe and upload to Anaconda'
+author: 'RJMW'
+branding:
+  icon: 'upload'
+  color: 'blue'
+inputs: 
+  subdir:
+    description: 'Sub-directory conda recipe'
+  anacondatoken:
+    description: 'Anaconda access token'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

@@ -1,0 +1,32 @@
+{% set version="0.1.4" %}
+{% set name="xlsxbuilder" %}
+{% set bioc="3.13" %}
+
+package:
+  name: 'r-{{name|lower}}'
+  version: '{{ version }}'
+source:
+  url: 
+    - 'https://github.com/computational-metabolomics/{{ name|lower }}/archive/v{{ version|lower }}.tar.gz'
+  md5: fab06db4a481a6e31d6e1950592e49e0
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+  noarch: generic
+requirements:
+  host:
+    - 'r-base >4.0,<4.1'
+    - r-openxlsx
+  run:
+    - 'r-base >4.0,<4.1'
+    - r-openxlsx
+test:
+  commands:
+    - '$R -e "library(''{{ name }}'')"'
+about:
+  home: 'https://github.com/computational-metabolomics/{{ name|lower }}'
+  license: 'GPL (>= 2)'
+  summary: 'Easily formatted excel outputs.'
+

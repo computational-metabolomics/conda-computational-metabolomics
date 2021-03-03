@@ -22,7 +22,7 @@ requirements:
     - 'bioconductor-pcamethods >=1.82.0,<1.83.0'
     - 'bioconductor-s4vectors >=0.28.0,<0.29.0'
     - 'bioconductor-summarizedexperiment >=1.20.0,<1.21.0'
-    - r-base >4.0
+    - 'r-base >4.0,<4.1'
     - r-ggplot2
     - r-matrixstats
     - r-missforest
@@ -32,7 +32,7 @@ requirements:
     - 'bioconductor-pcamethods >=1.82.0,<1.83.0'
     - 'bioconductor-s4vectors >=0.28.0,<0.29.0'
     - 'bioconductor-summarizedexperiment >=1.20.0,<1.21.0'
-    - r-base >4.0
+    - 'r-base >4.0,<4.1'
     - r-ggplot2
     - r-matrixstats
     - r-missforest

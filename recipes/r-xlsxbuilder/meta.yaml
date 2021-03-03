@@ -17,10 +17,10 @@ build:
   noarch: generic
 requirements:
   host:
-    - r-base >4.0
+    - 'r-base >4.0,<4.1'
     - r-openxlsx
   run:
-    - r-base >4.0
+    - 'r-base >4.0,<4.1'
     - r-openxlsx
 test:
   commands:

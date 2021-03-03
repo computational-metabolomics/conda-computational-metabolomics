@@ -18,7 +18,7 @@ requirements:
   host:
     - pandoc
     - icu
-    - r-base >4.0
+    - 'r-base >4.0,<4.1'
     - r-ggplot2
     - r-gridExtra
     - r-missforest
@@ -48,7 +48,7 @@ requirements:
   run:
     - pandoc
     - icu
-    - r-base >4.0
+    - 'r-base >4.0,<4.1'
     - r-ggplot2
     - r-gridExtra
     - r-missforest

@@ -1,0 +1,42 @@
+{% set version="0.1.0" %}
+{% set name="amimspy" %}
+
+package:
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: ''
+
+build:
+  noarch: python
+  number: 0
+  entry_points:
+    - beamspy = beamspy.__main__:main
+  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed . -vv
+
+requirements:
+  host:
+    - python >3.7
+    - pip
+  run:
+    - python >3.7
+    - dimspy ==2.0.0
+
+test:
+  imports:
+    - amimspy
+  commands:
+    - amimspy --help
+
+about:
+  home: https://github.com/computational-metabolomics/amimspy
+  license: GNU General Public v3 (GPLv3)
+  license_family: GPL3
+  license_file: LICENSE
+  summary: Python package for processing acoustic mist ionization mass spectrometry-based metabolomics and lipidomics data
+
+extra:
+  recipe-maintainers:
+    - RJMW

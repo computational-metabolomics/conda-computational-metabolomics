@@ -45,7 +45,7 @@ jobs:
           subdir: recipes/${{ matrix.recipe }}
 
       - name: build-upload-recipes
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' && steps.changed-recipe.outputs.changed == 'true'
         uses: ./
         with:
           subdir: recipes/${{ matrix.recipe }}

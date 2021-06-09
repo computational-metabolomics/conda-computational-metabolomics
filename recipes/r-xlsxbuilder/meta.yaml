@@ -10,17 +10,17 @@ source:
     - 'https://github.com/computational-metabolomics/{{ name|lower }}/archive/v{{ version|lower }}.tar.gz'
   md5: fab06db4a481a6e31d6e1950592e49e0
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
   noarch: generic
 requirements:
   host:
-    - 'r-base >4.0,<4.1'
+    - 'r-base >=4.0'
     - r-openxlsx
   run:
-    - 'r-base >4.0,<4.1'
+    - 'r-base >=4.0'
     - r-openxlsx
 test:
   commands:
@@ -29,4 +29,3 @@ about:
   home: 'https://github.com/computational-metabolomics/{{ name|lower }}'
   license: 'GPL (>= 2)'
   summary: 'Easily formatted excel outputs.'
-

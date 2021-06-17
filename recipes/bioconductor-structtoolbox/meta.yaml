@@ -85,7 +85,7 @@ test:
   commands:
     - '$R -e "library(''{{ name }}'')"'
 about:
-  home: 'http://bioconductor.org/packages/{{ bioc }}/bioc/html/{{ name }}.html'
+  home: 'https://github.com/computational-metabolomics/structToolbox'
   license: 'GPL (>= 2)'
   summary: 'Extends the class templates provided by the struct package to provide methods for training PCA, PLS models with cross-validation, permutation testing etc.'
 

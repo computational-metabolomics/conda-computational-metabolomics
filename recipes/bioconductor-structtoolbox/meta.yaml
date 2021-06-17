@@ -6,7 +6,7 @@ package:
   version: '{{ version }}'
 source:
   url:
-    - 'https://bioconductor.org/packages/{{ bioc }}/bioc/src/contrib/{{ name }}_{{ version }}.tar.gz'
+    - 'https://github.com/computational-metabolomics/{{ name|lower }}/archive/v{{ version|lower }}.tar.gz'
   md5: 7cb8483e38c8f278ee2e0e77e597061e 
 build:
   number: 0

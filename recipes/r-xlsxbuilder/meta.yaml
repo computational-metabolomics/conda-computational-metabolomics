@@ -1,4 +1,4 @@
-{% set version="0.1.2" %}
+{% set version="0.1.4" %}
 {% set name="xlsxbuilder" %}
 
 package:
@@ -7,19 +7,19 @@ package:
 source:
   url: 
     - 'https://github.com/computational-metabolomics/{{ name|lower }}/archive/v{{ version|lower }}.tar.gz'
-  md5: 5586e910dd0e0ac134b750202dcbe9f2
+  md5: fab06db4a481a6e31d6e1950592e49e0
 build:
-  number: 0
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
   noarch: generic
 requirements:
   host:
-    - 'r-base ==3.6.1'
+    - 'r-base >=4.2,<4.3'
     - r-openxlsx
   run:
-    - 'r-base ==3.6.1'
+    - 'r-base >=4.2,<4.3'
     - r-openxlsx
 test:
   commands:

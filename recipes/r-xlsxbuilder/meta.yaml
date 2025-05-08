@@ -9,7 +9,7 @@ source:
     - 'https://github.com/computational-metabolomics/{{ name|lower }}/archive/v{{ version|lower }}.tar.gz'
   md5: fab06db4a481a6e31d6e1950592e49e0
 build:
-  number: 3
+  number: 4
   rpaths:
     - lib/R/lib/
     - lib/
@@ -19,7 +19,7 @@ requirements:
     - 'r-base >=4.4,<4.5.0a0'
     - r-openxlsx
   run:
-    - 'r-base >=4.4,<4.4.0a0'
+    - 'r-base >=4.4,<4.5.0a0'
     - r-openxlsx
 test:
   commands:

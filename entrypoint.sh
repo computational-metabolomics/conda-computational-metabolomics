@@ -11,5 +11,5 @@ conda build -c conda-forge -c computational-metabolomics -c bioconda --output-fo
 
 if [[ -n "${INPUT_ANACONDATOKEN}" ]]; then
   export ANACONDA_API_TOKEN=$INPUT_ANACONDATOKEN
-  anaconda upload ./noarch/*.tar.bz2 -u computational-metabolomics
+  anaconda upload ./noarch/*.conda -u computational-metabolomics
 fi    

@@ -15,7 +15,7 @@ RUN wget \
 
 RUN conda --version
 
-RUN conda install -y conda-build conda-verify anaconda-client 
+RUN conda install -y -c conda-forge conda-build conda-verify anaconda-client 
 
 COPY entrypoint.sh /entrypoint.sh
 
